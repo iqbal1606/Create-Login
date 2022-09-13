@@ -29,7 +29,7 @@ if (!isset($_SESSION['log'])){
 </head>
 <body>
 	<audio autoplay> 
-		<source src="lagu/lagu2.mp3" type="audio/mp3">
+		<source src="lagu/laguburutani.mp3" type="audio/mp3">
 	</audio>
 
 	<!-- main -->
@@ -37,7 +37,7 @@ if (!isset($_SESSION['log'])){
 		<h1>WELCOME</h1></h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<h1><?= $data['nama_user'] ?></h1>
+				<h1 class="coba"><?= $data['nama_user'] ?></h1>
 				<h3>Anda Mendaftar Website ini pada</h3>
 				<h3><?= $data['join_login'] ?> </h3>
 				<h4>Anda Login Pada Tangal dan Jam</h4>
@@ -75,7 +75,15 @@ if (!isset($_SESSION['log'])){
 			<li></li>
 		</ul>
 	</div>
+<script>
+function kelapKelip() {
+$('.coba').fadeOut();
+$('.coba').fadeIn(); 
+}
+setInterval(kelapKelip, 1000); 
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
 </body>
 </html>

@@ -4,7 +4,6 @@
 ?>
 <?php
 include "../koneksi.php";
-date_default_timezone_set("Asia/Jakarta");
 $err = array();
 if (isset($_POST['submit'])) {
     array_push($err,"Harap masukan email");

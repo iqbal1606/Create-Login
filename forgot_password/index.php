@@ -7,13 +7,19 @@ if (!isset($_SESSION['log'])){
 }
 
 ?>
-
-<?php
-  include "../koneksi.php";
-  $email_user =$_SESSION['email_user'];
-  $sql = "SELECT * FROM user WHERE email_user ='$email_user'";
-  $query = mysqli_query($conn, $sql);
-  $data = mysqli_fetch_assoc($query);
+<?php             
+include "../koneksi.php";
+$email_user =$_SESSION['email_user'];
+$sql = "SELECT * FROM user WHERE email_user ='$email_user'";
+$query = mysqli_query($conn, $sql);
+$data = mysqli_fetch_assoc($query);
+$err = array();
+if (isset($_POST['submit'])) {
+	array_push($err);
+	$password_user = md5($_POST["password_user"]);
+	mysqli_query($conn, "UPDATE user SET password_user ='$password_user' WHERE email_user='$email_user'");
+	echo "<script> alert('Password Berhasil diganti');document.location.href='logout.php';</script>";	
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,20 +39,7 @@ if (!isset($_SESSION['log'])){
 				<form method="post">
                     <input class="text" type="password" name="password_user" placeholder="Ganti Password Anda" required="">
                     <input type="submit" name="submit" value="submit">
-				</form>
-				<?php
-               
-                include "../koneksi.php";
-                if (isset($_POST['submit'])) {
-                    array_push($err,"Harap masukan email");
-					$email_user =$_SESSION['email_user'];
-                    $password_user = md5($_POST["password_user"]);
-                    mysqli_query($conn, "UPDATE user SET password_user ='$password_user' WHERE email_user='$email_user'");
-					echo "<script> alert('Password Berhasil diganti');document.location.href='logout.php';</script>";	
-                }
-                ?>
-
-			
+				</form>	
 			</div>
 		</div>
 		
