@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Sep 2022 pada 11.44
+-- Waktu pembuatan: 16 Sep 2022 pada 18.05
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -43,8 +43,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `no_user`, `password_user`, `join_login`, `data_login`, `keluar_login`) VALUES
-(15, 'iqbal hario syahputra', 'ihariosyahputra16@gmail.com', '012345665', '496c62290865692c43ab943070e2e36c', '2022-09-12 15:14:00', '2022-09-13 16:42:00', '2022-09-13 16:42:00'),
-(16, 'Dini Oktaf', 'dini@gmail.com', '', '20f2c963a0bc322a6a7e4adb38b18e0d', '2022-09-13 15:24:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(15, 'iqbal hario syahputra', 'ihariosyahputra16@gmail.com', '012345665', '5c2fb951458b57e8e049d48a55cdddad', '2022-09-12 15:14:00', '2022-09-13 21:11:00', '2022-09-13 20:32:00'),
+(16, 'Dini Oktaf', 'dini@gmail.com', '', '20f2c963a0bc322a6a7e4adb38b18e0d', '2022-09-13 15:24:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(17, 'I LOVE YOU INDONESIA', 'admin@gmail.com', '0857311', '827ccb0eea8a706c4c34a16891f84e7b', '2022-09-13 19:00:00', '2022-09-16 22:09:00', '2022-09-16 22:11:00');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +65,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
