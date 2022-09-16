@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "koneksi.php"; //memngambi data dari koneksi.php
 date_default_timezone_set("Asia/Jakarta");
 $err = array();
 if(isset($_POST['submit'])){
@@ -7,9 +7,11 @@ if(isset($_POST['submit'])){
   $password = md5($_POST["password_user"]);
   $tanggal_login = $_POST['tgl_login'];
   $no_user = $_POST['no_user'];
+  //$post digunakan untuk memuat data pengisian form dari html
   mysqli_query($conn,"insert into user set nama_user= '$_POST[nama_user]',
   email_user= '$_POST[email_user]', no_user = '$_no_user', password_user = '$password', join_login = '$tanggal_login'");
-  echo "<script type='text/javascript'>alert('Register_Berhasil');
+  //fungsi memasukan atau membuat data di mysql
+  echo "<script type='text/javascript'>alert('Register_Berhasil'); 
   window.location='login.php'; </script>";
 }
                        

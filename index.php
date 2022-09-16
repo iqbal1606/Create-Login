@@ -44,19 +44,18 @@ if (!isset($_SESSION['log'])){
 				<h4><?= $data['data_login'] ?></h4>
 				<form method="post">
                     <input type="hidden" name="jam_keluar" value="<?=date ('Y-m-d H:i')?>">
-                    <input type="submit" name="chekout" value="Chekout">
+                    <input type="submit" name="logout" value="Logout">
 				</form>
 				<?php
                
                 include "koneksi.php";
-                if (isset($_POST['chekout'])) {
-                    array_push($err,"Harap masukan email");
+                if (isset($_POST['logout'])) {
 					$email_user =$_SESSION['email_user'];
                     $keluarlogin = $_POST['jam_keluar'];
                     mysqli_query($conn, "UPDATE user SET keluar_login ='$keluarlogin' WHERE email_user='$email_user'");
 					echo "<script> alert('Yakin Keluar?');document.location.href='logout.php';</script>";	
                 }
-?>
+				?>
 
 			
 			</div>

@@ -1,18 +1,20 @@
 <?php
     session_start();
+    // menyimpan sesion di login
  
 ?>
 <?php
 include "koneksi.php";
-date_default_timezone_set("Asia/Jakarta");
+date_default_timezone_set("Asia/Jakarta"); //membuat fungsi jam sesuai asia/jakarta
 $err = array();
 if (isset($_POST['login'])) {
+    //konfigurasi ketika klik login
     array_push($err);
-    $email_user = $_POST['email_user'];
-    $password = md5($_POST["password_user"]);
-    $joinlogin = $_POST['jam_login'];
-    $cek_user = mysqli_query($conn, "SELECT * FROM user WHERE email_user='$email_user' and password_user='$password'");
-    $query = mysqli_query($conn, "UPDATE user SET data_login ='$joinlogin' WHERE email_user='$email_user' and password_user='$password'");
+    $email_user = $_POST['email_user']; // form pengisian di html yaitu emal
+    $password = md5($_POST["password_user"]); //form pengisisan password yang telah di enskripsi dengan md5
+    $joinlogin = $_POST['jam_login']; //form pengisian jam login
+    $cek_user = mysqli_query($conn, "SELECT * FROM user WHERE email_user='$email_user' and password_user='$password'");// menampilkan data keseluruan
+    $query = mysqli_query($conn, "UPDATE user SET data_login ='$joinlogin' WHERE email_user='$email_user' and password_user='$password'");//update data di mysll
     $row      = mysqli_num_rows($cek_user);
     if ($row == 1) {
         $fetch_pass = mysqli_fetch_assoc($cek_user);
